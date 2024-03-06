@@ -15,7 +15,7 @@ class AuthService {
         });
 
         if(response.status == 401){
-            throw new Error("User or password are incorrect!");
+            throw new Error("Usuário ou senha incorreto!");
         }
 
         return await response.json();

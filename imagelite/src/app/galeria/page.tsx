@@ -23,7 +23,7 @@ export default function GaleriaPage(){
         setLoading(false);
 
         if(!result.length){
-            notification.notify('No results found!', 'warning');
+            notification.notify('Nenhum resultado encontrado!', 'warning');
         }
     }
 
@@ -47,10 +47,10 @@ export default function GaleriaPage(){
             <Template loading={loading}>            
                 <section className="flex flex-col items-center justify-center my-5">
                     <div className="flex space-x-4">
-                        <InputText placeholder='Type Name or Tags' onChange={event => setQuery(event.target.value)}/>
+                        <InputText placeholder='Digite o nome ou a tag' onChange={event => setQuery(event.target.value)}/>
                         <select onChange={event => setExtension(event.target.value)} 
                                 className="border px-4 py-2 rounded-lg text-gray-900">
-                            <option value="">All formats</option>
+                            <option value="">Todos</option>
                             <option value="PNG">PNG</option>
                             <option value="JPEG">JPEG</option>
                             <option value="GIF">GIF</option>
@@ -59,7 +59,7 @@ export default function GaleriaPage(){
                         <Button style='bg-blue-500 hover:bg-blue-300' label='Search' onClick={searchImages}/>
 
                         <Link href="/formulario">
-                            <Button style='bg-yellow-500 hover:bg-yellow-300' label='Add New' />
+                            <Button style='bg-yellow-500 hover:bg-yellow-300' label='Adicionar' />
                         </Link>
                     </div>
                 </section>

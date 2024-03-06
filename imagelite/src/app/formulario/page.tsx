@@ -24,9 +24,9 @@ export default function FormularioPage(){
         setLoading(true);
 
         const formData = new FormData();
-        formData.append("file", dados.file);
-        formData.append("name", dados.name);
-        formData.append("tags", dados.tags);
+        formData.append("Arquivo", dados.file);
+        formData.append("Nome", dados.name);
+        formData.append("Tags", dados.tags);
 
         await service.salvar(formData);
 
@@ -35,7 +35,7 @@ export default function FormularioPage(){
 
         setLoading(false);
 
-        notification.notify('Upload sent successfully!', 'success');
+        notification.notify('Envio concluido!', 'success');
     }
 
     function onFileUpload(event: React.ChangeEvent<HTMLInputElement>){
@@ -54,11 +54,11 @@ export default function FormularioPage(){
                     <h5 className='mt-3 mb-10 text-3xl font-extrabold tracking-tight text-gray-900'>Nova Imagem</h5>
                     <form onSubmit={formik.handleSubmit}>
                         <div className='grid grid-cols-1'>
-                            <label className='block text-sm font-medium leading-6 text-gray-700'>Name: *</label>
+                            <label className='block text-sm font-medium leading-6 text-gray-700'>Nome: *</label>
                             <InputText id="name" 
                                     onChange={formik.handleChange} 
                                     value={formik.values.name}
-                                    placeholder="type the image's name" />
+                                    placeholder="Digite o nome da imagem" />
                             <FieldError error={formik.errors.name} />
                         </div>
 
@@ -67,12 +67,12 @@ export default function FormularioPage(){
                             <InputText id="tags" 
                                     onChange={formik.handleChange} 
                                     value={formik.values.tags}
-                                    placeholder="type the tags comma separated" />
+                                    placeholder="Digite as tags" />
                             <FieldError error={formik.errors.tags} />
                         </div>
 
                         <div className='mt-5 grid grid-cols-1'>
-                            <label className='block text-sm font-medium leading-6 text-gray-700'>Image: *</label>
+                            <label className='block text-sm font-medium leading-6 text-gray-700'>Imagem: *</label>
                             <FieldError error={formik.errors.file} />
                             <div className='mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10'>
                                 <div className='text-center'>
@@ -89,7 +89,7 @@ export default function FormularioPage(){
                                         <label className='relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600'>
                                             
                                             <RenderIf condition={!imagePreview}>
-                                                <span>Click to upload</span>
+                                                <span>Adicionar imagem</span>
                                             </RenderIf>
 
                                             <RenderIf condition={!!imagePreview}>
@@ -104,9 +104,9 @@ export default function FormularioPage(){
                         </div>
 
                         <div className='mt-5 flex items-center justify-end gap-x-4'>
-                            <Button style='bg-blue-500 hover:bg-blue-300' type='submit' label='Save' />
+                            <Button style='bg-blue-500 hover:bg-blue-300' type='submit' label='Enviar' />
                             <Link href="/galeria">
-                                <Button style='bg-red-500 hover:bg-red-300' type='button' label='Cancel' />
+                                <Button style='bg-red-500 hover:bg-red-300' type='button' label='Cancelar' />
                             </Link>
                         </div>
                     </form>

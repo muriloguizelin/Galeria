@@ -10,17 +10,17 @@ export const formScheme: FormProps = { name: '', tags: '', file: '' }
 
 export const formValidationScheme = Yup.object().shape({
     name: Yup.string().trim()
-            .required('Name is required!')
-            .max(50, 'Name has the limit of 50 characters!'),
+            .required('Nome é obrigatório!')
+            .max(50, 'Limite 50 caracteres!'),
     tags: Yup.string().trim()
-            .required('Tags are required!')
-            .max(50, 'Tags has the limit of 50 characters!'),
+            .required('As tags são obrigatórias!')
+            .max(50, 'Limite 50 caracteres!'),
     file: Yup.mixed<Blob>()
-            .required('Select an image to upload!')
-            .test('size', 'File size cannot be higher than 4 MB', (file) => {
+            .required('Selecione uma imagem!')
+            .test('size', 'Imagem não pode ser maior que 4 MB', (file) => {
                 return file.size < 4000000;
             })
-            .test('type', 'Accepted formats: jpeg, giff or png', (file) => {
+            .test('type', 'Formatos aceitos: jpeg, giff ou png', (file) => {
                 return file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/gif';
             })
 })

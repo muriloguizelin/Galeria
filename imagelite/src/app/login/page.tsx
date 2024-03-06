@@ -40,7 +40,7 @@ export default function Login(){
 
             try {
                 await auth.save(user);
-                notification.notify("Success on saving user!", "success");
+                notification.notify("Sucesso ao salvar o usuário!", "success");
                 resetForm();
                 setNewUserState(false);
             } catch(error: any){
@@ -56,7 +56,7 @@ export default function Login(){
                 
                 <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
                     <h2 className='mt-10 text-center text-1xl font-bold leading-9 tracking-tight text-gray-900'>
-                        { newUserState ? 'Create New User' : 'Login to Your Account' }
+                        { newUserState ? 'Criar novo usuário' : 'Logar na sua conta' }
                     </h2>
                 </div>
 
@@ -64,7 +64,7 @@ export default function Login(){
                     <form onSubmit={handleSubmit} className='space-y-2'>
                         <RenderIf condition={newUserState}>
                             <div>
-                                <label className='block text-sm font-medium leading-6 text-gray-900'>Name: </label>
+                                <label className='block text-sm font-medium leading-6 text-gray-900'>Nome: </label>
                             </div>
                             <div className='mt-2'>
                                 <InputText style='w-full' 
@@ -97,20 +97,6 @@ export default function Login(){
                             <FieldError error={errors.password} />
                         </div>
 
-                        <RenderIf condition={newUserState}>
-                            <div>
-                                <label className='block text-sm font-medium leading-6 text-gray-900'>Repeat Password: </label>
-                            </div>
-                            <div className='mt-2'>
-                                <InputText style='w-full' 
-                                        type="password"
-                                        id='passwordMatch'
-                                        value={values.passwordMatch}
-                                        onChange={handleChange} />
-                                <FieldError error={errors.passwordMatch} />
-                            </div>
-                        </RenderIf>
-
                         <div>
                             <RenderIf condition={newUserState}>
                                 <Button type='submit' 
@@ -125,10 +111,10 @@ export default function Login(){
                             <RenderIf condition={!newUserState}>
                                 <Button type='submit' 
                                         style='bg-indigo-700 hover:bg-indigo-500' 
-                                        label='Login' />
+                                        label='Logar' />
                                 <Button type='button' 
                                         style='bg-red-700 hover:bg-red-500 mx-2' 
-                                        label='Sign Up'
+                                        label='Registrar'
                                         onClick={event => setNewUserState(true)} />
                             </RenderIf>
                         </div>
