@@ -10,32 +10,24 @@
 ![java][JAVA_BADGE]
 
 <p align="center">
- <a href="#started">Getting Started</a> • 
+ <a href="#started">Resumo</a> • 
   <a href="#routes">API Endpoints</a> 
 </p>
 
 <p align="center">
-  <b>Simple description of what your project do or how to use it.</b>
+  <b>Descrição resumida do projeto.</b>
 </p>
 
-<h2 id="started">🚀 Getting started</h2>
+<h2 id="started">🚀 Começo</h2>
 
-Here you describe how to run your project locally
+Um projeto simples de uma biblioteca de fotos online, com um procesos de autenticação, em Spring/React/Next, usando PostgreSQL como banco de dados e um deploy no Docker.
 
-<h3>Prerequisites</h3>
+<h3>Pré-requisitos</h3>
 
-Here you list all prerequisites necessary for running your project. For example:
-
-- [NodeJS](https://github.com/)
-- [Git 2](https://github.com)
-
-<h3>Cloning</h3>
-
-How to clone your project
-
-```bash
-git clone your-project-url-in-github
-```
+- [JDK 17](https://github.com/)
+- [Maven 3.8.5](https://github.com)
+- [NodeJS](https://github.com)
+- [PostgreSQL](https://github.com)
 
 <h3> Environment Variables</h2>
 
