@@ -29,52 +29,47 @@ Um projeto simples de uma biblioteca de fotos online, com um procesos de autenti
 - [NodeJS](https://github.com)
 - [PostgreSQL](https://github.com)
 
-<h3> Environment Variables</h2>
+<h3>variáveis de ambiente</h2>
 
-Use the `application.properties.example` as reference to create your configuration file `application.properties` with your AWS Credentials
+Modifique o arquivo `application.yml` de acordo com as suas necessidades:
 
 ```yaml
-aws.region=us-east-1
-aws.accessKeyId={YOUR_AWS_KEY_ID}
-aws.secretKey={YOUR_AWS_SECRET}
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: 123
 ```
 
-<h3>Starting</h3>
+<h3>Funcionamento</h3>
 
-How to start your project
+Como iniciar o projeto ->
 
 ```bash
-cd project-name
-npm some-command-to-run
+cd imagelite
+yarn dev
+``````
+```bash
+cd imageliteapi
+mvn run
 ``````
 
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-Here you can list the main routes of your API, and what are their expected request bodies.
 ​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
-| <kbd>GET /authenticate</kbd>     | retrieves user info see [response details](#get-auth-detail)
-| <kbd>POST /authenticate</kbd>     | authenticate user into the api see [request details](#post-auth-detail)
+| <kbd>PST /v1/users/auth</kbd>     | Autentica um usuário e retorna um token JWT
+| <kbd>GET /v1/images</kbd>     | Retorna uma lista com todas as imagens do sistema
+| <kbd>POST /v1/images</kbd>     | Adiciona uma nova imagem
+| <kbd>GET /v1/images/id</kbd>     | Retorna uma imagem apenas
 
-<h3 id="get-auth-detail">GET /authenticate</h3>
 
-**RESPONSE**
-```json
-{
-  "name": "Fernanda Kipper",
-  "age": 20,
-  "email": "her-email@gmail.com"
-}
-```
-
-<h3 id="post-auth-detail">POST /authenticate</h3>
+<h3 id="post-auth-detail">POST /v1/users/auth</h3>
 
 **REQUEST**
 ```json
 {
-  "username": "fernandakipper",
+  "email": "admin@admin.com",
   "password": "4444444"
 }
 ```
