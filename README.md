@@ -2,12 +2,17 @@
 [TYPESCRIPT__BADGE]: https://img.shields.io/badge/typescript-D4FAFF?style=for-the-badge&logo=typescript
 [JAVA_BADGE]:https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [SPRING_BADGE]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
+[REACT_BADGE]: https://img.shields.io/badge/react-black?logo=react&style=for-the-badge
+[POSTGRE_BADGE]:https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white
 
 <h1 align="center" style="font-weight: bold;">Galeria 💻</h1>
 
 ![typescript][TYPESCRIPT__BADGE]
 ![spring][SPRING_BADGE]
 ![java][JAVA_BADGE]
+![react][REACT_BADGE]
+![postgre][POSTGRE_BADGE]
+
 
 <p align="center">
  <a href="#started">Resumo</a> • 
