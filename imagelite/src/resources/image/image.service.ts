@@ -16,6 +16,16 @@ class ImageService {
         return await response.json();
     }
 
+    async deletar(id: string) : Promise<void> {
+        const userSession = this.auth.getUserSession();
+        await fetch(`${this.baseURL}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Authorization": `Bearer ${userSession?.accessToken}`
+            }
+        })
+    }
+
     async salvar(dados: FormData) : Promise<string> {
         const userSession = this.auth.getUserSession();
         const response = await fetch(this.baseURL, {

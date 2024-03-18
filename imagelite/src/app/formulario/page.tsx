@@ -24,9 +24,9 @@ export default function FormularioPage(){
         setLoading(true);
 
         const formData = new FormData();
-        formData.append("Arquivo", dados.file);
-        formData.append("Nome", dados.name);
-        formData.append("Tags", dados.tags);
+        formData.append("file", dados.file);
+        formData.append("name", dados.name);
+        formData.append("tags", dados.tags);
 
         await service.salvar(formData);
 

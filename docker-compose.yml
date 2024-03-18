@@ -3,7 +3,7 @@ version: '3.9'
 services:
   db:
     image: postgres
-    restart: unless-stopedd
+    restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile
       context: ./imageliteapi
     container_name: imageliteapi
-    restart: unless-stopedd
+    restart: always
     depends_on:
       - db
     ports:
@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
       context: ./imagelite
     container_name: imageliteapp
-    restart: unless-stopedd
+    restart: always
     depends_on:
       - sbootapp
     ports:

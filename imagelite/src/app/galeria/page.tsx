@@ -61,6 +61,9 @@ export default function GaleriaPage(){
                         <Link href="/formulario">
                             <Button style='bg-yellow-500 hover:bg-yellow-300' label='Adicionar' />
                         </Link>
+
+                        <Button style='bg-red-500 hover:bg-red-300' label='Limpar' onClick={() => setImages([])}/>
+
                     </div>
                 </section>
 

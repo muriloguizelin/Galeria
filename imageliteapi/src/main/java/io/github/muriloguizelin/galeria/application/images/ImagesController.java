@@ -67,8 +67,6 @@ public class ImagesController {
             @RequestParam(value = "extension", required = false, defaultValue = "") String extension,
             @RequestParam(value = "query",required = false) String query) throws InterruptedException {
 
-        Thread.sleep(3000L);
-
         var result = service.search(ImageExtension.ofName(extension), query);
 
         var images = result.stream().map(image -> {
@@ -85,5 +83,11 @@ public class ImagesController {
                 .fromCurrentRequestUri()
                 .path(imagePath)
                 .build().toUri();
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity delete(@PathVariable("id") String id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

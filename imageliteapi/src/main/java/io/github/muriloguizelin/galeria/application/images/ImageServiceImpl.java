@@ -33,4 +33,11 @@ public class ImageServiceImpl implements ImageService {
     public List<Image> search(ImageExtension extension, String query) {
         return repository.findByExtensionAndNameOrTagsLike(extension, query);
     }
+
+    @Override
+    public Optional<Image> delete(String id) {
+        var possibleImage = repository.findById(id);
+        possibleImage.ifPresent(repository::delete);
+        return possibleImage;
+    }
 }
