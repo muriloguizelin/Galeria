@@ -63,7 +63,7 @@ mvn run
 ​
 | route               | description                                          
 |----------------------|-----------------------------------------------------
-| <kbd>PST /v1/users/auth</kbd>     | Autentica um usuário e retorna um token JWT
+| <kbd>POST /v1/users/auth</kbd>     | Autentica um usuário e retorna um token JWT
 | <kbd>GET /v1/images</kbd>     | Retorna uma lista com todas as imagens do sistema
 | <kbd>POST /v1/images</kbd>     | Adiciona uma nova imagem
 | <kbd>GET /v1/images/id</kbd>     | Retorna uma imagem apenas
